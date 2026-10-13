@@ -1,0 +1,21 @@
+# Old .html URLs of guides that were merged into one page each (301)
+/articles/google-merchant-account-suspended-again.html /articles/google-merchant-account-suspended 301
+/articles/google-merchant-account-suspended-business-information.html /articles/google-merchant-account-suspended 301
+/articles/google-merchant-account-suspended-feed-issues.html /articles/google-merchant-account-suspended 301
+/articles/google-merchant-account-suspended-policy-violation.html /articles/google-merchant-account-suspended 301
+/articles/google-merchant-account-suspended-reinstatement-process.html /articles/google-merchant-account-suspended 301
+/articles/google-merchant-account-suspended-reinstatement-timeline.html /articles/google-merchant-account-suspended 301
+/articles/google-merchant-account-suspended-website-policy-issues.html /articles/gmc-misrepresentation-error 301
+/articles/google-merchant-account-review-mistakes.html /articles/google-merchant-account-suspended 301
+/articles/google-merchant-availability-mismatch.html /articles/google-merchant-price-mismatch 301
+/articles/pmax-feed-only-campaign.html /articles/pmax-not-spending 301
+/articles/pmax-low-impressions.html /articles/pmax-not-spending 301
+/articles/google-ads-shopify-conversion-tracking-audit.html /articles/shopify-conversion-tracking 301
+# Guides that kept their topic: old .html address -> clean address
+/articles/google-merchant-account-suspended.html /articles/google-merchant-account-suspended 301
+/articles/gmc-misrepresentation-error.html /articles/gmc-misrepresentation-error 301
+/articles/google-merchant-price-mismatch.html /articles/google-merchant-price-mismatch 301
+/articles/google-merchant-products-not-showing-all.html /articles/google-merchant-products-not-showing 301
+/articles/pmax-not-spending.html /articles/pmax-not-spending 301
+/articles/shopify-conversion-tracking.html /articles/shopify-conversion-tracking 301
+/index.html / 301

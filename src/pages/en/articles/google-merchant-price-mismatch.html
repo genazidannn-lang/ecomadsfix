@@ -1,0 +1,49 @@
+<!--meta
+{
+  "title": "Merchant Center Price or Availability Mismatch: Causes and Fixes",
+  "description": "Why Google says your feed price or availability doesn't match the landing page: VAT, currencies, variants, sale prices, structured data. How to fix it for good.",
+  "h1": "Merchant Center price or availability mismatch: why the feed and the page disagree",
+  "lead": "Google crawls your product page and compares what it sees with the feed. If the price or stock status differ, the product is disapproved. If it happens across the store, it can turn into an account-level trust problem.",
+  "topic": "mismatch",
+  "updated": "2026-10-13",
+  "published": "2026-01-09",
+  "related": ["articles/google-merchant-products-not-showing", "articles/gmc-misrepresentation-error"]
+}
+-->
+<h2>How Google decides there's a mismatch</h2>
+<p>Googlebot opens the product's <code>link</code> URL, reads the price and availability from the visible page and from structured data (the <code>Product</code> markup in the page code), and compares them with <code>price</code>, <code>sale_price</code> and <code>availability</code> in the feed. The issue shows on the product as something like <em>Mismatched value (page crawl) [price]</em> or <em>[availability]</em>.</p>
+<p>Two things follow from that. First, Google sees the page as a visitor from wherever its crawler is, usually the US, not as you see it. Second, the structured data counts as much as the visible price.</p>
+
+<h2>Common causes of a price mismatch</h2>
+<table>
+  <thead><tr><th>Cause</th><th>What happens</th><th>Fix</th></tr></thead>
+  <tbody>
+    <tr><td>Feed updates less often than prices</td><td>You changed prices in the morning, the feed is fetched once a day at night.</td><td>Fetch more often, or connect the store through an app or the Merchant API that syncs changes right away.</td></tr>
+    <tr><td>Sale price on the site, not in the feed</td><td>The page shows €39 crossed out to €29, the feed sends only <code>price</code> = 39.</td><td>Send <code>sale_price</code> and <code>sale_price_effective_date</code>, or keep the sale out of the feed entirely.</td></tr>
+    <tr><td>VAT</td><td>In the EU and UK prices must include VAT. In the US they exclude tax. The feed sends a net price, the page shows gross, or the other way round.</td><td>Match the rule for the target country on both sides.</td></tr>
+    <tr><td>Currency switched by location</td><td>Shopify Markets or a currency app shows USD to the crawler while the feed says EUR.</td><td>Separate URLs per market (subfolders or domains) and a feed per country pointing to them.</td></tr>
+    <tr><td>Variants</td><td>The feed item is the XL in red at €45, the link opens the product with the default €39 variant selected.</td><td>Link to the variant itself (on Shopify, <code>?variant=ID</code>), so the page opens with that price.</td></tr>
+    <tr><td>Wrong structured data</td><td>The theme outputs the lowest variant price, an old price or the wrong currency in <code>Product</code> markup.</td><td>Check the markup with Google's Rich Results Test and fix the theme template.</td></tr>
+    <tr><td>Price only after an action</td><td>Price appears after login, in the cart, or after closing a popup.</td><td>Show the final price on the product page without any action.</td></tr>
+  </tbody>
+</table>
+
+<h2>Availability mismatch</h2>
+<p>Same mechanism, different field. The usual cases:</p>
+<ul>
+  <li>The feed says <code>in_stock</code>, the page says "Sold out" because the feed is a day behind.</li>
+  <li>The store keeps selling when stock is zero (on Shopify: "Continue selling when out of stock"), so the page shows "Add to cart" while the feed sends <code>out_of_stock</code>.</li>
+  <li>Pre-orders sent as <code>in_stock</code>. Use <code>preorder</code> or <code>backorder</code> together with <code>availability_date</code>.</li>
+  <li>The page's structured data has <code>InStock</code> hardcoded regardless of the real stock.</li>
+</ul>
+
+<h2>Automatic item updates: a safety net, not a fix</h2>
+<p>In <span class="path">Settings → Automatic improvements</span> you can let Google update price and availability from your page when they differ. It cuts down disapprovals, and I usually turn it on. But it relies on your structured data being right, and it doesn't fix the cause. If the feed is wrong every day, Google is correcting you every day, and that's not a pattern you want on an account under review.</p>
+
+<h2>How to check a single product</h2>
+<ol>
+  <li>In Merchant Center open the product and copy the <code>link</code> and the feed price.</li>
+  <li>Open the link in a private window with a VPN set to the target country. Compare the price, currency and stock status with the feed.</li>
+  <li>Run the same URL through the Rich Results Test and look at <code>offers.price</code>, <code>priceCurrency</code> and <code>availability</code>.</li>
+  <li>If all three agree and the product is still disapproved, wait for the next crawl or fetch the feed again manually.</li>
+</ol>

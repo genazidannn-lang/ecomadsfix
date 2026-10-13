@@ -1,0 +1,52 @@
+<!--meta
+{
+  "title": "Products Not Showing in Google Shopping: How to Find the Reason",
+  "description": "Products not showing in Google Shopping? Tell apart disapproved, limited and approved-but-invisible products, and fix shipping, GTIN, feed label and store issues.",
+  "h1": "Products not showing in Google Shopping: how to find out why",
+  "lead": "\"Not showing\" covers three different problems: the product isn't approved, it's approved but not eligible where you're looking, or it's eligible and simply not winning auctions. Each has a different fix, so the first job is to find out which one you have.",
+  "topic": "not-showing",
+  "updated": "2026-10-13",
+  "published": "2026-01-09",
+  "related": ["articles/google-merchant-price-mismatch", "articles/pmax-not-spending", "articles/google-merchant-account-suspended"]
+}
+-->
+<h2>Step one: look at the status, not at Google search</h2>
+<p>Searching for your own product on Google tells you almost nothing. Results depend on location, history and auction, and repeated searches without clicks can make your own ads show less to you. Open Merchant Center instead: <span class="path">Products → All products</span>, and filter by status.</p>
+<ul>
+  <li><strong>Not approved</strong>: the product can't show anywhere. Open it to see the issue.</li>
+  <li><strong>Limited</strong>: it can show, but not everywhere or not to everyone. Often a missing identifier or a country restriction.</li>
+  <li><strong>Approved</strong>: Merchant Center has no complaints. The problem is in campaigns, bids or competition.</li>
+  <li><strong>Pending</strong>: new products or a new account still under initial review. Give it a few days.</li>
+</ul>
+<p>If the whole account has a red banner in <span class="path">Overview</span>, it's not a product problem. Start with <a href="/articles/google-merchant-account-suspended">the suspension guide</a>.</p>
+
+<h2>Not approved or limited: the usual reasons</h2>
+<table>
+  <thead><tr><th>Issue</th><th>What it means</th><th>Fix</th></tr></thead>
+  <tbody>
+    <tr><td>Missing shipping</td><td>No shipping cost set for the country the product targets.</td><td>Add a shipping service for that country in <span class="path">Settings → Shipping and returns</span>.</td></tr>
+    <tr><td>Missing or incorrect GTIN</td><td>A branded product without its barcode, or with a made-up one.</td><td>Send the real GTIN. For own-brand or handmade goods with no barcode, set <code>identifier_exists</code> to <code>no</code>.</td></tr>
+    <tr><td>Mismatched price or availability</td><td>The feed and the page disagree.</td><td>See <a href="/articles/google-merchant-price-mismatch">price and availability mismatch</a>.</td></tr>
+    <tr><td>Image issues</td><td>Promotional text over the photo, watermark, placeholder, image too small.</td><td>Use a clean product photo on a plain background as <code>image_link</code>.</td></tr>
+    <tr><td>Landing page not reachable</td><td>The page returns an error, blocks Googlebot, or the store is still behind a password.</td><td>Open the link logged out, from another country. On Shopify, check that the store password is off.</td></tr>
+    <tr><td>Policy issue</td><td>The product falls into a restricted category: health claims, adult, weapons parts and others.</td><td>Read the issue details. Some categories can't be advertised at all.</td></tr>
+  </tbody>
+</table>
+
+<h2>Approved but not where you expect</h2>
+<p>A product can be approved and still not eligible for the country or surface you're checking:</p>
+<ul>
+  <li><strong>Country.</strong> The feed's country or feed label doesn't match the country the campaign targets. A feed for Ukraine won't serve in a campaign targeting Poland.</li>
+  <li><strong>Destination.</strong> On the product's page in Merchant Center, check which destinations it's eligible for: Shopping ads, free listings. A product can be fine for ads and excluded from free listings, or the reverse.</li>
+  <li><strong>Language.</strong> The feed language should match the language of the country you target.</li>
+</ul>
+
+<h2>Eligible but no impressions</h2>
+<p>If Merchant Center is clean, look at Google Ads:</p>
+<ul>
+  <li>Is there an active Shopping or Performance Max campaign that includes these products? Check listing groups for exclusions.</li>
+  <li>Is the budget or target letting the campaign spend at all? See <a href="/articles/pmax-not-spending">Performance Max not spending</a>.</li>
+  <li>Is the price competitive? Merchant Center's price competitiveness report shows how your price compares with others selling the same product. A product priced 25% above the market rarely wins.</li>
+  <li>Are the titles specific enough? "Blanket" competes with everything. "Fleece blanket with sleeves, 180×140, grey" matches the searches that buy.</li>
+</ul>
+<p>To check whether an ad shows for a given search without affecting your stats, use the <span class="path">Ad Preview and Diagnosis</span> tool in Google Ads instead of searching yourself.</p>

@@ -1,0 +1,52 @@
+<!--meta
+{
+  "title": "Shopify Google Ads Conversion Tracking Not Working: How to Fix It",
+  "description": "Shopify purchases missing, doubled or with wrong values in Google Ads. How to check the Google & YouTube app, customer events, duplicates, consent mode and goals.",
+  "h1": "Shopify conversion tracking not working in Google Ads",
+  "lead": "When Shopify orders and Google Ads purchases don't line up, the cause is usually one of four: no tag firing on the order, two tags firing on it, a wrong value or currency, or a difference in how the two systems count. Here's how to tell which.",
+  "topic": "tracking",
+  "updated": "2026-10-13",
+  "published": "2026-01-09",
+  "related": ["articles/pmax-not-spending"]
+}
+-->
+<h2>What changed on Shopify</h2>
+<p>Shopify retired the old <em>Additional scripts</em> box on the Thank you and Order status pages (for Plus stores in 2025, for other plans in 2026). Tracking now runs through apps and <span class="path">Settings → Customer events</span>, where pixels run in a sandbox. Many stores that "always had tracking" lost their purchase tag in that switch without noticing.</p>
+
+<h2>First, look at the status in Google Ads</h2>
+<p>Open <span class="path">Goals → Conversions → Summary</span>. For each purchase action note:</p>
+<ul>
+  <li><strong>Status</strong>: active, no recent conversions, inactive, unverified. Inactive or no recent conversions on the main purchase action means nothing is arriving.</li>
+  <li><strong>Source</strong>: is it the Google &amp; YouTube app, Google Tag Manager, an import from GA4, or something else?</li>
+  <li><strong>Primary or secondary</strong>: only one purchase action should be Primary, otherwise bidding counts the same order twice.</li>
+</ul>
+
+<h2>Zero purchases in Google Ads</h2>
+<ul>
+  <li>The Google &amp; YouTube app is connected to a different Google Ads account than the one you look at. Check the account ID in the app settings.</li>
+  <li>The old purchase tag lived in Additional scripts and stopped when Shopify retired it. Nothing replaced it.</li>
+  <li>In <span class="path">Customer events</span> the pixel is disconnected or has no permission to run.</li>
+  <li>Consent: in the EEA and UK, with a cookie banner and no consent mode set up, tags don't fire for visitors who don't accept. Set up consent mode so Google can at least model the missing conversions.</li>
+  <li>The campaign optimizes for a different action than the one actually recording.</li>
+</ul>
+
+<h2>Doubled purchases</h2>
+<p>Almost always two sources counting the same order: the Google &amp; YouTube app and a purchase tag in GTM, or the app plus a GA4 import. Pick one source for the Primary purchase action, set the others to Secondary or remove them. The counting setting is not the culprit: <em>Every</em> is the right choice for purchases, and switching to <em>One</em> would only hide repeat orders.</p>
+
+<h2>Wrong values</h2>
+<ul>
+  <li>The value includes shipping and tax in one setup and excludes it in another. Decide what ROAS should be based on and use the same everywhere.</li>
+  <li>Currency: with Shopify Markets the order can be in the shopper's currency while the conversion action expects your store currency. Make sure the tag passes the currency code.</li>
+  <li>Static value: the action was created with a fixed value of 1, so every purchase is worth €1 to bidding.</li>
+</ul>
+
+<h2>Numbers that differ for legitimate reasons</h2>
+<p>Even with perfect tracking, Shopify and Google Ads won't match one to one. Google Ads attributes a conversion to the date of the click, Shopify counts orders on the order date. Google Ads counts only orders after an ad click within the conversion window, can include view-through and cross-device conversions, and models some conversions under consent mode. A 10–20% difference is normal. A factor of two isn't.</p>
+
+<h2>How to test</h2>
+<ol>
+  <li>Place a test order with a 100% discount code or a cheap product.</li>
+  <li>Within a few hours, look at the action's status and the diagnostics tab in Google Ads.</li>
+  <li>Tag Assistant often can't see events inside Shopify's checkout sandbox, so don't treat its silence as proof that nothing fired.</li>
+  <li>Turn on enhanced conversions. The Google &amp; YouTube app supports it, and it recovers part of the conversions lost to cookies and devices.</li>
+</ol>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Merchant Center: ціна або наявність не збігаються. Причини і рішення</title>
+<meta name="description" content="Чому Google пише, що ціна або наявність у фіді не збігаються зі сторінкою: ПДВ, валюти, варіанти, акційні ціни, мікророзмітка. Як виправити назавжди.">
+<link rel="canonical" href="https://ecomadsfix.com/uk/articles/google-merchant-price-mismatch">
+<link rel="alternate" hreflang="en" href="https://ecomadsfix.com/articles/google-merchant-price-mismatch">
+<link rel="alternate" hreflang="uk" href="https://ecomadsfix.com/uk/articles/google-merchant-price-mismatch">
+<link rel="alternate" hreflang="ru" href="https://ecomadsfix.com/ru/articles/google-merchant-price-mismatch">
+<link rel="alternate" hreflang="x-default" href="https://ecomadsfix.com/articles/google-merchant-price-mismatch">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Merchant Center: ціна або наявність не збігаються. Причини і рішення">
+<meta property="og:description" content="Чому Google пише, що ціна або наявність у фіді не збігаються зі сторінкою: ПДВ, валюти, варіанти, акційні ціни, мікророзмітка. Як виправити назавжди.">
+<meta property="og:url" content="https://ecomadsfix.com/uk/articles/google-merchant-price-mismatch">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:site_name" content="EcomAdsFix">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://ecomadsfix.com/#author", "name": "Myroslav", "jobTitle": "Google Ads specialist", "url": "https://ecomadsfix.com/", "knowsAbout": ["Google Merchant Center", "Google Ads", "Performance Max", "Conversion tracking"]}, {"@type": "WebSite", "@id": "https://ecomadsfix.com/#website", "url": "https://ecomadsfix.com/", "name": "EcomAdsFix", "inLanguage": ["en", "uk", "ru"]}, {"@type": "Article", "headline": "Розбіжність ціни або наявності в Merchant Center: чому фід і сторінка не збігаються", "description": "Чому Google пише, що ціна або наявність у фіді не збігаються зі сторінкою: ПДВ, валюти, варіанти, акційні ціни, мікророзмітка. Як виправити назавжди.", "inLanguage": "uk", "datePublished": "2026-01-09", "dateModified": "2026-10-13", "author": {"@id": "https://ecomadsfix.com/#author"}, "publisher": {"@id": "https://ecomadsfix.com/#author"}, "mainEntityOfPage": "https://ecomadsfix.com/uk/articles/google-merchant-price-mismatch"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Головна", "item": "https://ecomadsfix.com/uk/"}, {"@type": "ListItem", "position": 2, "name": "Розбіжність ціни або наявності в Merchant Center: чому фід і сторінка не збігаються", "item": "https://ecomadsfix.com/uk/articles/google-merchant-price-mismatch"}]}]}</script>
+</head>
+<body class="article">
+<header class="top">
+<a class="brand" href="/uk/">EcomAdsFix</a>
+<nav class="menu" aria-label="Main"><a href="/uk/#guides">Інструкції</a><a href="/uk/#how">Як я працюю</a><a href="https://t.me/CHANGE_ME" rel="noopener">Контакт</a></nav>
+<nav class="langs" aria-label="Language"><a href="/articles/google-merchant-price-mismatch" hreflang="en" lang="en">EN</a><a href="/uk/articles/google-merchant-price-mismatch" hreflang="uk" lang="uk" aria-current="true">UA</a><a href="/ru/articles/google-merchant-price-mismatch" hreflang="ru" lang="ru">RU</a></nav>
+</header>
+<main>
+<article class="doc"><nav class="crumbs" aria-label="Breadcrumb"><a href="/uk/">Головна</a> / <a href="/uk/#guides">Інструкції</a></nav><h1>Розбіжність ціни або наявності в Merchant Center: чому фід і сторінка не збігаються</h1><p class="byline">Автор: Мирослав. Оновлено: <time datetime="2026-10-13">13 жовтня 2026</time></p><p class="lead">Google сканує сторінку товару і порівнює те, що бачить, з фідом. Якщо ціна чи наявність відрізняються, товар відхиляють. Якщо таке відбувається по всьому магазину, це може перерости в проблему довіри до всього акаунта.</p><h2>Як Google визначає розбіжність</h2>
+<p>Googlebot відкриває URL з атрибута <code>link</code>, читає ціну і наявність з видимої сторінки та з мікророзмітки (розмітка <code>Product</code> у коді сторінки) і порівнює їх з <code>price</code>, <code>sale_price</code> і <code>availability</code> у фіді. На товарі з'являється проблема на кшталт <em>Mismatched value (page crawl) [price]</em> або <em>[availability]</em>.</p>
+<p>Звідси два висновки. Перший: Google бачить сторінку як відвідувач з тієї країни, звідки працює його краулер, найчастіше зі США, а не так, як бачите її ви. Другий: мікророзмітка важить стільки ж, скільки видима ціна.</p>
+
+<h2>Типові причини розбіжності ціни</h2>
+<table>
+  <thead><tr><th>Причина</th><th>Що відбувається</th><th>Як виправити</th></tr></thead>
+  <tbody>
+    <tr><td>Фід оновлюється рідше, ніж ціни</td><td>Ви змінили ціни зранку, а фід забирається раз на добу вночі.</td><td>Забирати фід частіше або підключити магазин через застосунок чи Merchant API, які синхронізують зміни одразу.</td></tr>
+    <tr><td>Акційна ціна є на сайті, але не у фіді</td><td>На сторінці 1 200 ₴ закреслено і стоїть 899 ₴, а фід передає лише <code>price</code> = 1 200.</td><td>Передавати <code>sale_price</code> і <code>sale_price_effective_date</code> або взагалі не передавати акцію у фід.</td></tr>
+    <tr><td>ПДВ</td><td>В Україні та ЄС ціни мають бути з ПДВ, у США без податку. Фід передає ціну без ПДВ, а сторінка з ним, або навпаки.</td><td>Дотримуватися правила цільової країни з обох боків.</td></tr>
+    <tr><td>Валюта змінюється за геолокацією</td><td>Shopify Markets чи валютний застосунок показує краулеру USD, а фід каже UAH або EUR.</td><td>Окремі URL для кожного ринку (підпапки чи домени) і окремий фід для кожної країни з посиланнями на них.</td></tr>
+    <tr><td>Варіанти товару</td><td>У фіді червоний XL за 1 450 ₴, а посилання відкриває товар з вибраним варіантом за 1 200 ₴.</td><td>Посилатися на сам варіант (у Shopify <code>?variant=ID</code>), щоб сторінка відкривалася з потрібною ціною.</td></tr>
+    <tr><td>Неправильна мікророзмітка</td><td>Тема виводить у розмітці <code>Product</code> найменшу ціну серед варіантів, стару ціну або не ту валюту.</td><td>Перевірити розмітку в Rich Results Test від Google і виправити шаблон теми.</td></tr>
+    <tr><td>Ціна видна лише після дії</td><td>Ціна з'являється після входу, в кошику або після закриття попапу.</td><td>Показувати кінцеву ціну на сторінці товару без жодних дій.</td></tr>
+  </tbody>
+</table>
+
+<h2>Розбіжність наявності</h2>
+<p>Той самий механізм, інше поле. Типові випадки:</p>
+<ul>
+  <li>Фід каже <code>in_stock</code>, а сторінка «Немає в наявності», бо фід відстає на добу.</li>
+  <li>Магазин продає і при нульовому залишку (у Shopify: «Continue selling when out of stock»), тож сторінка показує «Купити», а фід передає <code>out_of_stock</code>.</li>
+  <li>Передзамовлення передаються як <code>in_stock</code>. Використовуйте <code>preorder</code> або <code>backorder</code> разом з <code>availability_date</code>.</li>
+  <li>У мікророзмітці сторінки жорстко прописано <code>InStock</code> незалежно від реального залишку.</li>
+</ul>
+
+<h2>Автоматичні оновлення товарів: страховка, а не рішення</h2>
+<p>У <span class="path">Settings → Automatic improvements</span> можна дозволити Google оновлювати ціну і наявність зі сторінки, коли вони розходяться з фідом. Це зменшує кількість відхилень, і я зазвичай це вмикаю. Але функція спирається на правильну мікророзмітку і не прибирає причину. Якщо фід щодня неправильний, Google щодня вас виправляє, а для акаунта на перевірці це погана картина.</p>
+
+<h2>Як перевірити один товар</h2>
+<ol>
+  <li>У Merchant Center відкрийте товар і скопіюйте <code>link</code> та ціну з фіду.</li>
+  <li>Відкрийте посилання в приватному вікні з VPN цільової країни. Порівняйте ціну, валюту і наявність з фідом.</li>
+  <li>Перевірте той самий URL у Rich Results Test і подивіться <code>offers.price</code>, <code>priceCurrency</code> і <code>availability</code>.</li>
+  <li>Якщо все збігається, а товар досі відхилений, дочекайтеся наступного сканування або вручну заберіть фід ще раз.</li>
+</ol>
+</article><aside class="cta" id="contact"><h2>Merchant Center заблоковано або товарна реклама не крутиться?</h2><p>Надішліть мені скриншот повідомлення з Merchant Center або Google Ads. Скажу, що найімовірніше стало причиною і що виправити до запиту на перевірку. Перший погляд безкоштовний.</p><a class="btn" href="https://t.me/CHANGE_ME" rel="noopener">Написати в Telegram</a></aside><aside class="author"><span class="avatar" aria-hidden="true">М</span><div><p class="author-name">Автор: Мирослав</p><p>Працюю з Google Ads з 2018 року: пошук, Shopping, Performance Max, КМС, налаштування конверсій через GTM. З 2024 року щільно займаюся блокуваннями Merchant Center і проблемами фідів інтернет-магазинів.</p></div></aside><nav class="related" aria-label="Схожі інструкції"><h2>Схожі інструкції</h2><ul><li><a href="/uk/articles/google-merchant-products-not-showing">Товари не показуються в Google Shopping: як з&#x27;ясувати чому</a></li><li><a href="/uk/articles/gmc-misrepresentation-error">Блокування Merchant Center за misrepresentation: що насправді перевіряють</a></li></ul></nav>
+</main>
+<footer class="foot">
+<p>Незалежний спеціаліст, не пов'язаний з Google. Розблокування не може гарантувати ніхто: остаточне рішення щодо кожної перевірки ухвалює Google.</p>
+<p>На сайті немає форм, cookies і аналітики, що вас ідентифікує. Якщо ви пишете мені в Telegram, я бачу лише те, що ви надіслали.</p>
+<p>&copy; 2026 EcomAdsFix · Мирослав</p>
+</footer>
+</body>
+</html>

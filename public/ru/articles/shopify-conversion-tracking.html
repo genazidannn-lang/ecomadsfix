@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Не работает отслеживание конверсий Shopify в Google Ads: решение</title>
+<meta name="description" content="Покупки из Shopify не доходят, задваиваются или имеют неверную ценность в Google Ads. Как проверить приложение Google &amp; YouTube, customer events, дубли, consent mode и цели.">
+<link rel="canonical" href="https://ecomadsfix.com/ru/articles/shopify-conversion-tracking">
+<link rel="alternate" hreflang="en" href="https://ecomadsfix.com/articles/shopify-conversion-tracking">
+<link rel="alternate" hreflang="uk" href="https://ecomadsfix.com/uk/articles/shopify-conversion-tracking">
+<link rel="alternate" hreflang="ru" href="https://ecomadsfix.com/ru/articles/shopify-conversion-tracking">
+<link rel="alternate" hreflang="x-default" href="https://ecomadsfix.com/articles/shopify-conversion-tracking">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Не работает отслеживание конверсий Shopify в Google Ads: решение">
+<meta property="og:description" content="Покупки из Shopify не доходят, задваиваются или имеют неверную ценность в Google Ads. Как проверить приложение Google &amp; YouTube, customer events, дубли, consent mode и цели.">
+<meta property="og:url" content="https://ecomadsfix.com/ru/articles/shopify-conversion-tracking">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="EcomAdsFix">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://ecomadsfix.com/#author", "name": "Myroslav", "jobTitle": "Google Ads specialist", "url": "https://ecomadsfix.com/", "knowsAbout": ["Google Merchant Center", "Google Ads", "Performance Max", "Conversion tracking"]}, {"@type": "WebSite", "@id": "https://ecomadsfix.com/#website", "url": "https://ecomadsfix.com/", "name": "EcomAdsFix", "inLanguage": ["en", "uk", "ru"]}, {"@type": "Article", "headline": "Не работает отслеживание конверсий Shopify в Google Ads", "description": "Покупки из Shopify не доходят, задваиваются или имеют неверную ценность в Google Ads. Как проверить приложение Google & YouTube, customer events, дубли, consent mode и цели.", "inLanguage": "ru", "datePublished": "2026-01-09", "dateModified": "2026-10-13", "author": {"@id": "https://ecomadsfix.com/#author"}, "publisher": {"@id": "https://ecomadsfix.com/#author"}, "mainEntityOfPage": "https://ecomadsfix.com/ru/articles/shopify-conversion-tracking"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://ecomadsfix.com/ru/"}, {"@type": "ListItem", "position": 2, "name": "Не работает отслеживание конверсий Shopify в Google Ads", "item": "https://ecomadsfix.com/ru/articles/shopify-conversion-tracking"}]}]}</script>
+</head>
+<body class="article">
+<header class="top">
+<a class="brand" href="/ru/">EcomAdsFix</a>
+<nav class="menu" aria-label="Main"><a href="/ru/#guides">Инструкции</a><a href="/ru/#how">Как я работаю</a><a href="https://t.me/CHANGE_ME" rel="noopener">Контакт</a></nav>
+<nav class="langs" aria-label="Language"><a href="/articles/shopify-conversion-tracking" hreflang="en" lang="en">EN</a><a href="/uk/articles/shopify-conversion-tracking" hreflang="uk" lang="uk">UA</a><a href="/ru/articles/shopify-conversion-tracking" hreflang="ru" lang="ru" aria-current="true">RU</a></nav>
+</header>
+<main>
+<article class="doc"><nav class="crumbs" aria-label="Breadcrumb"><a href="/ru/">Главная</a> / <a href="/ru/#guides">Инструкции</a></nav><h1>Не работает отслеживание конверсий Shopify в Google Ads</h1><p class="byline">Автор: Мирослав. Обновлено: <time datetime="2026-10-13">13 октября 2026</time></p><p class="lead">Когда заказы в Shopify и покупки в Google Ads не совпадают, причина обычно одна из четырёх: на заказе не срабатывает ни один тег, срабатывают два, неверная ценность или валюта, или две системы по-разному считают. Вот как понять, что именно у вас.</p><h2>Что изменилось в Shopify</h2>
+<p>Shopify убрал старое поле <em>Additional scripts</em> на страницах Thank you и Order status (для магазинов Plus в 2025 году, для остальных тарифов в 2026). Теперь отслеживание работает через приложения и <span class="path">Settings → Customer events</span>, где пиксели запускаются в изолированной среде. Многие магазины, где отслеживание «всегда было», при этом переходе незаметно потеряли тег покупки.</p>
+
+<h2>Сначала посмотрите статус в Google Ads</h2>
+<p>Откройте <span class="path">Goals → Conversions → Summary</span>. Для каждого действия «покупка» обратите внимание на:</p>
+<ul>
+  <li><strong>Статус</strong>: активно, нет недавних конверсий, неактивно, не подтверждено. Если основное действие покупки неактивно или без недавних конверсий, ничего не поступает.</li>
+  <li><strong>Источник</strong>: приложение Google &amp; YouTube, Google Tag Manager, импорт из GA4 или что-то ещё?</li>
+  <li><strong>Основное или дополнительное</strong>: основным (Primary) должно быть только одно действие покупки, иначе стратегия ставок считает один и тот же заказ дважды.</li>
+</ul>
+
+<h2>Ноль покупок в Google Ads</h2>
+<ul>
+  <li>Приложение Google &amp; YouTube подключено к другому аккаунту Google Ads, а не к тому, который вы смотрите. Проверьте ID аккаунта в настройках приложения.</li>
+  <li>Старый тег покупки жил в Additional scripts и перестал работать, когда Shopify это поле убрал. Ничем его не заменили.</li>
+  <li>В <span class="path">Customer events</span> пиксель отключён или не имеет разрешения на запуск.</li>
+  <li>Согласие: в ЕЭЗ и Великобритании с баннером cookies и без настроенного consent mode теги не срабатывают у посетителей, которые не согласились. Настройте consent mode, чтобы Google мог хотя бы смоделировать пропущенные конверсии.</li>
+  <li>Кампания оптимизируется под другое действие, а не под то, которое реально записывает конверсии.</li>
+</ul>
+
+<h2>Задвоенные покупки</h2>
+<p>Почти всегда это два источника, которые считают один и тот же заказ: приложение Google &amp; YouTube и тег покупки в GTM, или приложение плюс импорт из GA4. Оставьте один источник для основного действия покупки, остальные сделайте дополнительными или удалите. Настройка подсчёта здесь ни при чём: для покупок правильный вариант <em>Every</em> (каждая), а переключение на <em>One</em> только спрячет повторные заказы.</p>
+
+<h2>Неверная ценность</h2>
+<ul>
+  <li>В одной настройке ценность включает доставку и налоги, в другой нет. Решите, от чего считать ROAS, и используйте одно и то же везде.</li>
+  <li>Валюта: с Shopify Markets заказ может быть в валюте покупателя, а действие конверсии ждёт валюту магазина. Убедитесь, что тег передаёт код валюты.</li>
+  <li>Фиксированная ценность: действие создали с постоянной ценностью 1, и для стратегии ставок каждая покупка стоит 1.</li>
+</ul>
+
+<h2>Цифры, которые расходятся по уважительным причинам</h2>
+<p>Даже с идеальным отслеживанием Shopify и Google Ads не совпадут один в один. Google Ads привязывает конверсию к дате клика, Shopify считает заказы по дате заказа. Google Ads учитывает только заказы после клика по рекламе в пределах окна конверсии, может включать конверсии после просмотра и с других устройств, а с consent mode часть конверсий моделирует. Разница 10–20% нормальна. В два раза — нет.</p>
+
+<h2>Как протестировать</h2>
+<ol>
+  <li>Сделайте тестовый заказ со скидкой 100% или на дешёвый товар.</li>
+  <li>Через несколько часов посмотрите статус действия и вкладку диагностики в Google Ads.</li>
+  <li>Tag Assistant часто не видит событий внутри изолированного checkout Shopify, так что его молчание ещё не доказывает, что ничего не сработало.</li>
+  <li>Включите расширенные конверсии (enhanced conversions). Приложение Google &amp; YouTube их поддерживает, и они возвращают часть конверсий, потерянных из-за cookies и разных устройств.</li>
+</ol>
+</article><aside class="cta" id="contact"><h2>Merchant Center заблокирован или торговая реклама не крутится?</h2><p>Пришлите мне скриншот уведомления из Merchant Center или Google Ads. Скажу, что скорее всего стало причиной и что исправить до запроса на проверку. Первый взгляд бесплатный.</p><a class="btn" href="https://t.me/CHANGE_ME" rel="noopener">Написать в Telegram</a></aside><aside class="author"><span class="avatar" aria-hidden="true">М</span><div><p class="author-name">Автор: Мирослав</p><p>Работаю с Google Ads с 2018 года: поиск, Shopping, Performance Max, КМС, настройка конверсий через GTM. С 2024 года плотно занимаюсь блокировками Merchant Center и проблемами фидов интернет-магазинов.</p></div></aside><nav class="related" aria-label="Похожие инструкции"><h2>Похожие инструкции</h2><ul><li><a href="/ru/articles/pmax-not-spending">Performance Max не тратит бюджет: почему и что изменить</a></li></ul></nav>
+</main>
+<footer class="foot">
+<p>Независимый специалист, не связан с Google. Разблокировку не может гарантировать никто: окончательное решение по каждой проверке принимает Google.</p>
+<p>На сайте нет форм, cookies и аналитики, которая вас идентифицирует. Если вы пишете мне в Telegram, я вижу только то, что вы прислали.</p>
+<p>&copy; 2026 EcomAdsFix · Мирослав</p>
+</footer>
+</body>
+</html>

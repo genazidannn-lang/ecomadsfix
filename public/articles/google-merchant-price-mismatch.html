@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Merchant Center Price or Availability Mismatch: Causes and Fixes</title>
+<meta name="description" content="Why Google says your feed price or availability doesn&#x27;t match the landing page: VAT, currencies, variants, sale prices, structured data. How to fix it for good.">
+<link rel="canonical" href="https://ecomadsfix.com/articles/google-merchant-price-mismatch">
+<link rel="alternate" hreflang="en" href="https://ecomadsfix.com/articles/google-merchant-price-mismatch">
+<link rel="alternate" hreflang="uk" href="https://ecomadsfix.com/uk/articles/google-merchant-price-mismatch">
+<link rel="alternate" hreflang="ru" href="https://ecomadsfix.com/ru/articles/google-merchant-price-mismatch">
+<link rel="alternate" hreflang="x-default" href="https://ecomadsfix.com/articles/google-merchant-price-mismatch">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Merchant Center Price or Availability Mismatch: Causes and Fixes">
+<meta property="og:description" content="Why Google says your feed price or availability doesn&#x27;t match the landing page: VAT, currencies, variants, sale prices, structured data. How to fix it for good.">
+<meta property="og:url" content="https://ecomadsfix.com/articles/google-merchant-price-mismatch">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="EcomAdsFix">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://ecomadsfix.com/#author", "name": "Myroslav", "jobTitle": "Google Ads specialist", "url": "https://ecomadsfix.com/", "knowsAbout": ["Google Merchant Center", "Google Ads", "Performance Max", "Conversion tracking"]}, {"@type": "WebSite", "@id": "https://ecomadsfix.com/#website", "url": "https://ecomadsfix.com/", "name": "EcomAdsFix", "inLanguage": ["en", "uk", "ru"]}, {"@type": "Article", "headline": "Merchant Center price or availability mismatch: why the feed and the page disagree", "description": "Why Google says your feed price or availability doesn't match the landing page: VAT, currencies, variants, sale prices, structured data. How to fix it for good.", "inLanguage": "en", "datePublished": "2026-01-09", "dateModified": "2026-10-13", "author": {"@id": "https://ecomadsfix.com/#author"}, "publisher": {"@id": "https://ecomadsfix.com/#author"}, "mainEntityOfPage": "https://ecomadsfix.com/articles/google-merchant-price-mismatch"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://ecomadsfix.com/"}, {"@type": "ListItem", "position": 2, "name": "Merchant Center price or availability mismatch: why the feed and the page disagree", "item": "https://ecomadsfix.com/articles/google-merchant-price-mismatch"}]}]}</script>
+</head>
+<body class="article">
+<header class="top">
+<a class="brand" href="/">EcomAdsFix</a>
+<nav class="menu" aria-label="Main"><a href="/#guides">Guides</a><a href="/#how">How I work</a><a href="https://t.me/CHANGE_ME" rel="noopener">Contact</a></nav>
+<nav class="langs" aria-label="Language"><a href="/articles/google-merchant-price-mismatch" hreflang="en" lang="en" aria-current="true">EN</a><a href="/uk/articles/google-merchant-price-mismatch" hreflang="uk" lang="uk">UA</a><a href="/ru/articles/google-merchant-price-mismatch" hreflang="ru" lang="ru">RU</a></nav>
+</header>
+<main>
+<article class="doc"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/#guides">Guides</a></nav><h1>Merchant Center price or availability mismatch: why the feed and the page disagree</h1><p class="byline">Written by: Myroslav. Updated: <time datetime="2026-10-13">October 13, 2026</time></p><p class="lead">Google crawls your product page and compares what it sees with the feed. If the price or stock status differ, the product is disapproved. If it happens across the store, it can turn into an account-level trust problem.</p><h2>How Google decides there's a mismatch</h2>
+<p>Googlebot opens the product's <code>link</code> URL, reads the price and availability from the visible page and from structured data (the <code>Product</code> markup in the page code), and compares them with <code>price</code>, <code>sale_price</code> and <code>availability</code> in the feed. The issue shows on the product as something like <em>Mismatched value (page crawl) [price]</em> or <em>[availability]</em>.</p>
+<p>Two things follow from that. First, Google sees the page as a visitor from wherever its crawler is, usually the US, not as you see it. Second, the structured data counts as much as the visible price.</p>
+
+<h2>Common causes of a price mismatch</h2>
+<table>
+  <thead><tr><th>Cause</th><th>What happens</th><th>Fix</th></tr></thead>
+  <tbody>
+    <tr><td>Feed updates less often than prices</td><td>You changed prices in the morning, the feed is fetched once a day at night.</td><td>Fetch more often, or connect the store through an app or the Merchant API that syncs changes right away.</td></tr>
+    <tr><td>Sale price on the site, not in the feed</td><td>The page shows €39 crossed out to €29, the feed sends only <code>price</code> = 39.</td><td>Send <code>sale_price</code> and <code>sale_price_effective_date</code>, or keep the sale out of the feed entirely.</td></tr>
+    <tr><td>VAT</td><td>In the EU and UK prices must include VAT. In the US they exclude tax. The feed sends a net price, the page shows gross, or the other way round.</td><td>Match the rule for the target country on both sides.</td></tr>
+    <tr><td>Currency switched by location</td><td>Shopify Markets or a currency app shows USD to the crawler while the feed says EUR.</td><td>Separate URLs per market (subfolders or domains) and a feed per country pointing to them.</td></tr>
+    <tr><td>Variants</td><td>The feed item is the XL in red at €45, the link opens the product with the default €39 variant selected.</td><td>Link to the variant itself (on Shopify, <code>?variant=ID</code>), so the page opens with that price.</td></tr>
+    <tr><td>Wrong structured data</td><td>The theme outputs the lowest variant price, an old price or the wrong currency in <code>Product</code> markup.</td><td>Check the markup with Google's Rich Results Test and fix the theme template.</td></tr>
+    <tr><td>Price only after an action</td><td>Price appears after login, in the cart, or after closing a popup.</td><td>Show the final price on the product page without any action.</td></tr>
+  </tbody>
+</table>
+
+<h2>Availability mismatch</h2>
+<p>Same mechanism, different field. The usual cases:</p>
+<ul>
+  <li>The feed says <code>in_stock</code>, the page says "Sold out" because the feed is a day behind.</li>
+  <li>The store keeps selling when stock is zero (on Shopify: "Continue selling when out of stock"), so the page shows "Add to cart" while the feed sends <code>out_of_stock</code>.</li>
+  <li>Pre-orders sent as <code>in_stock</code>. Use <code>preorder</code> or <code>backorder</code> together with <code>availability_date</code>.</li>
+  <li>The page's structured data has <code>InStock</code> hardcoded regardless of the real stock.</li>
+</ul>
+
+<h2>Automatic item updates: a safety net, not a fix</h2>
+<p>In <span class="path">Settings → Automatic improvements</span> you can let Google update price and availability from your page when they differ. It cuts down disapprovals, and I usually turn it on. But it relies on your structured data being right, and it doesn't fix the cause. If the feed is wrong every day, Google is correcting you every day, and that's not a pattern you want on an account under review.</p>
+
+<h2>How to check a single product</h2>
+<ol>
+  <li>In Merchant Center open the product and copy the <code>link</code> and the feed price.</li>
+  <li>Open the link in a private window with a VPN set to the target country. Compare the price, currency and stock status with the feed.</li>
+  <li>Run the same URL through the Rich Results Test and look at <code>offers.price</code>, <code>priceCurrency</code> and <code>availability</code>.</li>
+  <li>If all three agree and the product is still disapproved, wait for the next crawl or fetch the feed again manually.</li>
+</ol>
+</article><aside class="cta" id="contact"><h2>Merchant Center suspended or Shopping ads stuck?</h2><p>Send me a screenshot of the notice in Merchant Center or Google Ads. I'll tell you what most likely triggered it and what to fix before you request a review. The first look is free.</p><a class="btn" href="https://t.me/CHANGE_ME" rel="noopener">Message me on Telegram</a></aside><aside class="author"><span class="avatar" aria-hidden="true">M</span><div><p class="author-name">Written by: Myroslav</p><p>Google Ads specialist since 2018: Search, Shopping, Performance Max, GDN, conversion tracking with GTM. Since 2024 I've been working closely with Merchant Center suspensions and feed problems for ecommerce stores.</p></div></aside><nav class="related" aria-label="Related guides"><h2>Related guides</h2><ul><li><a href="/articles/google-merchant-products-not-showing">Products not showing in Google Shopping: how to find out why</a></li><li><a href="/articles/gmc-misrepresentation-error">Merchant Center misrepresentation suspension: what reviewers actually check</a></li></ul></nav>
+</main>
+<footer class="foot">
+<p>Independent specialist. Not affiliated with Google. Nobody can guarantee reinstatement: Google makes the final decision on every review.</p>
+<p>This site has no forms, no cookies and no analytics that identify you. If you write to me on Telegram, I see only what you send.</p>
+<p>&copy; 2026 EcomAdsFix · Myroslav</p>
+</footer>
+</body>
+</html>

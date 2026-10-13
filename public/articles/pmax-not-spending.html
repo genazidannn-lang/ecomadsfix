@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Performance Max Not Spending or Low Impressions: Causes and Fixes</title>
+<meta name="description" content="Why a Performance Max campaign doesn&#x27;t spend: strict tROAS or tCPA, few eligible products, feed label mismatch, broken conversion goals, feed-only setups.">
+<link rel="canonical" href="https://ecomadsfix.com/articles/pmax-not-spending">
+<link rel="alternate" hreflang="en" href="https://ecomadsfix.com/articles/pmax-not-spending">
+<link rel="alternate" hreflang="uk" href="https://ecomadsfix.com/uk/articles/pmax-not-spending">
+<link rel="alternate" hreflang="ru" href="https://ecomadsfix.com/ru/articles/pmax-not-spending">
+<link rel="alternate" hreflang="x-default" href="https://ecomadsfix.com/articles/pmax-not-spending">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Performance Max Not Spending or Low Impressions: Causes and Fixes">
+<meta property="og:description" content="Why a Performance Max campaign doesn&#x27;t spend: strict tROAS or tCPA, few eligible products, feed label mismatch, broken conversion goals, feed-only setups.">
+<meta property="og:url" content="https://ecomadsfix.com/articles/pmax-not-spending">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="EcomAdsFix">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://ecomadsfix.com/#author", "name": "Myroslav", "jobTitle": "Google Ads specialist", "url": "https://ecomadsfix.com/", "knowsAbout": ["Google Merchant Center", "Google Ads", "Performance Max", "Conversion tracking"]}, {"@type": "WebSite", "@id": "https://ecomadsfix.com/#website", "url": "https://ecomadsfix.com/", "name": "EcomAdsFix", "inLanguage": ["en", "uk", "ru"]}, {"@type": "Article", "headline": "Performance Max not spending: why and what to change", "description": "Why a Performance Max campaign doesn't spend: strict tROAS or tCPA, few eligible products, feed label mismatch, broken conversion goals, feed-only setups.", "inLanguage": "en", "datePublished": "2026-01-09", "dateModified": "2026-10-13", "author": {"@id": "https://ecomadsfix.com/#author"}, "publisher": {"@id": "https://ecomadsfix.com/#author"}, "mainEntityOfPage": "https://ecomadsfix.com/articles/pmax-not-spending"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://ecomadsfix.com/"}, {"@type": "ListItem", "position": 2, "name": "Performance Max not spending: why and what to change", "item": "https://ecomadsfix.com/articles/pmax-not-spending"}]}]}</script>
+</head>
+<body class="article">
+<header class="top">
+<a class="brand" href="/">EcomAdsFix</a>
+<nav class="menu" aria-label="Main"><a href="/#guides">Guides</a><a href="/#how">How I work</a><a href="https://t.me/CHANGE_ME" rel="noopener">Contact</a></nav>
+<nav class="langs" aria-label="Language"><a href="/articles/pmax-not-spending" hreflang="en" lang="en" aria-current="true">EN</a><a href="/uk/articles/pmax-not-spending" hreflang="uk" lang="uk">UA</a><a href="/ru/articles/pmax-not-spending" hreflang="ru" lang="ru">RU</a></nav>
+</header>
+<main>
+<article class="doc"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/#guides">Guides</a></nav><h1>Performance Max not spending: why and what to change</h1><p class="byline">Written by: Myroslav. Updated: <time datetime="2026-10-13">October 13, 2026</time></p><p class="lead">A PMax campaign that spends a few euros a day out of a fifty-euro budget is almost never broken. It's usually being told, by the target, the feed or the conversion data, that there are very few auctions worth entering.</p><h2>Start with the campaign's own diagnostics</h2>
+<p>Open the campaign and look at the status next to its name and at the diagnostics card on the campaign <span class="path">Overview</span>. "Eligible (Limited)", "Bid strategy learning", "Misconfigured" and similar statuses already tell you which area to look at. If the status is plain "Eligible" and spend is still low, go through the causes below in order. They're sorted by how often I see them.</p>
+
+<h2>1. The target is too strict</h2>
+<p>A target ROAS of 600% on an account that historically makes 300% tells the algorithm to bid only where it expects twice the usual return. There are few such auctions, so the campaign barely spends. The same applies to target CPA set far below what conversions actually cost.</p>
+<p>What to do: lower the target to around what the account really achieves, or run Maximize conversion value without a target for two or three weeks to collect data, then add a target close to the result.</p>
+
+<h2>2. Budget too small for the target</h2>
+<p>With a €30 target CPA and a €20 daily budget, the campaign can't afford even one conversion a day and stays cautious. A common rule of thumb is a daily budget of at least three times the target CPA.</p>
+
+<h2>3. Few products are actually eligible</h2>
+<p>A feed of 2,000 items where 1,700 are disapproved or limited leaves 300 to advertise. Check the products tab inside the campaign and Merchant Center statuses. Also check listing groups: an exclusion added once for testing and forgotten can cut out most of the catalog. See <a href="/articles/google-merchant-products-not-showing">products not showing</a>.</p>
+
+<h2>4. Feed and campaign target different countries</h2>
+<p>The campaign targets Spain, while the feed is set up for another country or uses a feed label the campaign doesn't select. The campaign runs, but has nothing to show on Shopping inventory.</p>
+
+<h2>5. Conversion data is missing or wrong</h2>
+<p>Smart bidding learns from conversions. If purchases aren't recorded, or the campaign optimizes for a goal that has no conversions (for example, an inactive action left as Primary in the account's default goals), the algorithm has nothing to aim for and plays safe. Check <span class="path">Goals → Conversions → Summary</span> for the status of each action and which ones are Primary. For Shopify stores see <a href="/articles/shopify-conversion-tracking">conversion tracking not working</a>.</p>
+
+<h2>6. Something at account level is blocking delivery</h2>
+<ul>
+  <li>Billing problems or a declined payment method.</li>
+  <li>Advertiser verification pending or failed.</li>
+  <li>Account-level negative keywords, brand exclusions or placement exclusions that are much broader than intended.</li>
+  <li>Ads or assets disapproved for policy.</li>
+</ul>
+
+<h2>7. The campaign is new or keeps being edited</h2>
+<p>The first one to two weeks spending is uneven. Every big change to the target, budget, or product set sends the campaign back to learning. If you change something every two days, it never finishes learning.</p>
+
+<h2>Things that don't limit spend (but people think they do)</h2>
+<p>Audience signals are suggestions, not targeting. Adding or removing them doesn't restrict where the campaign can go. Asset quality affects which placements you win, but a weak ad strength alone won't stop a campaign from spending.</p>
+
+<h2>Feed-only Performance Max</h2>
+<p>A PMax campaign with only the product feed and no images, videos or text assets serves almost only on Shopping inventory. That's a legitimate setup, and many stores prefer it because spend stays on product ads. Expect lower volume than a full PMax, though: you've deliberately removed YouTube, Display and Discover inventory. If you want more reach, add assets. If you want control, keep it feed-only and work on the feed and prices.</p>
+
+<h2>Low impressions with normal spend status</h2>
+<p>If the campaign is eligible, targets are reasonable, products are approved and impressions are still low, look at price competitiveness and titles. Shopping ranks products by relevance to the search and by how attractive the offer is. A product that's 20–30% more expensive than other sellers of the same item loses most auctions, whatever the bid.</p>
+</article><aside class="cta" id="contact"><h2>Merchant Center suspended or Shopping ads stuck?</h2><p>Send me a screenshot of the notice in Merchant Center or Google Ads. I'll tell you what most likely triggered it and what to fix before you request a review. The first look is free.</p><a class="btn" href="https://t.me/CHANGE_ME" rel="noopener">Message me on Telegram</a></aside><aside class="author"><span class="avatar" aria-hidden="true">M</span><div><p class="author-name">Written by: Myroslav</p><p>Google Ads specialist since 2018: Search, Shopping, Performance Max, GDN, conversion tracking with GTM. Since 2024 I've been working closely with Merchant Center suspensions and feed problems for ecommerce stores.</p></div></aside><nav class="related" aria-label="Related guides"><h2>Related guides</h2><ul><li><a href="/articles/google-merchant-products-not-showing">Products not showing in Google Shopping: how to find out why</a></li><li><a href="/articles/shopify-conversion-tracking">Shopify conversion tracking not working in Google Ads</a></li></ul></nav>
+</main>
+<footer class="foot">
+<p>Independent specialist. Not affiliated with Google. Nobody can guarantee reinstatement: Google makes the final decision on every review.</p>
+<p>This site has no forms, no cookies and no analytics that identify you. If you write to me on Telegram, I see only what you send.</p>
+<p>&copy; 2026 EcomAdsFix · Myroslav</p>
+</footer>
+</body>
+</html>
